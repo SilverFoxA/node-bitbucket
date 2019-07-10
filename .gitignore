@@ -64,6 +64,8 @@ typings/
 **/*.d.ts
 
 # Others
+.rpt2_cache
 dist
 docs
+lib
 /bitbucket-test.js
