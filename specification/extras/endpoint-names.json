@@ -928,6 +928,7 @@
   },
   "/repositories/{workspace}/{repo_slug}/environments/{environment_uuid}": {
     "delete": {
+      "deployments": "",
       "repositories": ""
     },
     "get": {
@@ -1065,6 +1066,11 @@
       "repositories": ""
     }
   },
+  "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/remote-triggers/{trigger_key}": {
+    "put": {
+      "repositories": ""
+    }
+  },
   "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/": {
     "get": {
       "pipelines": "",
@@ -1080,6 +1086,26 @@
   "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/log": {
     "get": {
       "pipelines": "",
+      "repositories": ""
+    }
+  },
+  "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/logs/{log_uuid}": {
+    "get": {
+      "repositories": ""
+    }
+  },
+  "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports": {
+    "get": {
+      "repositories": ""
+    }
+  },
+  "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports/test_cases": {
+    "get": {
+      "repositories": ""
+    }
+  },
+  "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports/test_cases/{test_case_uuid}/test_case_reasons": {
+    "get": {
       "repositories": ""
     }
   },

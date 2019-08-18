@@ -8835,7 +8835,47 @@
     }
   },
   "/repositories/{workspace}/{repo_slug}/environments/{environment_uuid}": {
-    "delete": {},
+    "delete": {
+      "description": "Delete an environment",
+      "operationId": "deleteEnvironmentForRepository",
+      "parameters": [
+        {
+          "description": "The account.",
+          "in": "path",
+          "name": "username",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "description": "The repository.",
+          "in": "path",
+          "name": "repo_slug",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "description": "The environment UUID.",
+          "in": "path",
+          "name": "environment_uuid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": {
+        "204": {
+          "description": "The environment was deleted."
+        },
+        "404": {
+          "description": "No account or repository with the UUID provided exists.",
+          "schema": {
+            "$ref": "#/definitions/error"
+          }
+        }
+      },
+      "tags": [
+        "deployments"
+      ]
+    },
     "get": {
       "description": "Retrieve an environment",
       "operationId": "getEnvironmentForRepository",
@@ -10045,6 +10085,9 @@
       ]
     }
   },
+  "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/remote-triggers/{trigger_key}": {
+    "put": {}
+  },
   "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/": {
     "get": {
       "description": "Find steps for the given pipeline.",
@@ -10202,6 +10245,18 @@
         "pipelines"
       ]
     }
+  },
+  "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/logs/{log_uuid}": {
+    "get": {}
+  },
+  "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports": {
+    "get": {}
+  },
+  "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports/test_cases": {
+    "get": {}
+  },
+  "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports/test_cases/{test_case_uuid}/test_case_reasons": {
+    "get": {}
   },
   "/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/stopPipeline": {
     "post": {
