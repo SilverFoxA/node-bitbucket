@@ -219,6 +219,17 @@
       ]
     }
   },
+  "/repositories/{workspace}/{repo_slug}/environments/{environment_uuid}/changes/": {
+    "post": {
+      "parameters": [
+        {
+          "in": "body",
+          "name": "_body",
+          "required": true
+        }
+      ]
+    }
+  },
   "/snippets/{username}/{encoded_id}/watch": {
     "delete": {
       "responses": {
